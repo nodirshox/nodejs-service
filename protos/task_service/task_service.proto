@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package task_service;
+option go_package="genproto/task_service";
+
+import "task.proto";

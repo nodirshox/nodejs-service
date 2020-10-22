@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-service",
+  "version": "1.0.0",
+  "description": "Micro service structure using Node JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodirshox/nodejs-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nodirshox/nodejs-service/issues"
+  },
+  "homepage": "https://github.com/nodirshox/nodejs-service#readme",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.5",
+    "grpc": "^1.24.3",
+    "mongoose": "^5.10.9",
+    "winston": "^3.3.3"
+  }
+}

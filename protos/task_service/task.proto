@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package task_service;
+option go_package="genproto/task_service";
+
+service TaskService {
+    rpc Create (CreateTaskRequest) returns (CreateTaskResponse) {}
+    rpc Update (UpdateTaskRequest) returns (EmptyResponse) {}
+    rpc Get (GetRequest) returns (TaskResponse) {}
+    rpc Find (FindRequest) returns (FindTaskResponse) {}
+    rpc Delete (DeleteRequest) returns (EmptyResponse) {}
+}
+
+// Create request and response
+message CreateTaskRequest {
+    string title = 1;
+    bool is_active = 2;
+}
+
+message CreateTaskResponse {
+    string task_id = 1;
+}
+
+// Update request and response
+message UpdateTaskRequest {
+    string id = 1;
+    string title = 2;
+    bool is_active = 3;
+}
+
+message EmptyResponse {}
+
+// Get request and response
+message GetRequest {
+    string id = 1;
+}
+
+message TaskResponse {
+    string id = 1;
+    string title = 2;
+    bool is_active = 3;
+    string created_at = 4;
+}
+
+// Find request and response
+message FindRequest {}
+
+message FindTaskResponse {
+    repeated TaskResponse tasks = 1;
+}
+
+// Delete request
+message DeleteRequest {
+    string id = 1;
+} 
