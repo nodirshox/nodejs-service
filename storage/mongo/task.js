@@ -4,9 +4,10 @@ const Task = require("../../models/Task");
 let TaskStorage = {
     create: (task) => {
         return new Promise((resolve, reject) => {
-            if (task.title) return reject(new Error("Task title is required"));
+            if (!task.title) return reject(new Error("Task title is required"));
 
-            task.created_at = new Date();
+			task.created_at = new Date();
+			task.updated_at = new Date();
 
             let ts = new Task(task);
             ts.save((err, result) => {
@@ -18,16 +19,18 @@ let TaskStorage = {
     },
     update: (task) => {
 		return new Promise((resolve, reject) => {
+			console.log(task)
 			if (!task.id) return reject(new Error("Task ID is required"));
             if (!task.title) return reject(new Error("Task title is required"));
-            if (!task.is_active) return reject(new Error("Status of Task is required"));
+            if (task.is_active != true && task.is_active != false) return reject(new Error("Status of Task is required"));
 
-			Task.findOne({ _id: req.id }, (err, ts) => {
+			Task.findOne({ _id: task.id }, (err, ts) => {
 				if (err) return reject(err);
 				if (!ts) return reject(new Error("Task is not found"));
 
                 ts.title = task.title;
                 ts.is_active = task.is_active;
+				ts.updated_at = new Date();
 
 				ts.save((err, result) => {
 					if (err) return reject(err);
@@ -39,7 +42,7 @@ let TaskStorage = {
     get: (task) => {
 		return new Promise((resolve, reject) => {
 			if (!task.id) return reject(new Error("Task ID is required"));
-			Task.findOne({ _id: req.id }, (err, result) => {
+			Task.findOne({ _id: task.id }, (err, result) => {
 				if (err) return reject(err);
 				if (!result) return reject(new Error("Task is not found"));
 				
@@ -58,7 +61,7 @@ let TaskStorage = {
 	},
 	delete: (task) => {
 		return new Promise((resolve, reject) => {
-			if (!req.id) return reject(new Error("Task ID is required"));
+			if (!task.id) return reject(new Error("Task ID is required"));
 			Task.findOneAndDelete({ _id: task.id }, (err, result) => {
 				if (err) return reject(err);
 				if (!result) return reject(new Error("Task is not found"));

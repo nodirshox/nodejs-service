@@ -51,10 +51,10 @@ function main() {
 		require("./services/task.js")
 	);
 	
-	server.bind("0.0.0.0:" + config.RPCPort, grpc.ServerCredentials.createInsecure());
+	server.bind("0.0.0.0:" + 8000, grpc.ServerCredentials.createInsecure());
 
 	server.start();
-	logger.info("grpc server is running at 0.0.0.0:80");
+	logger.info("grpc server is running at 0.0.0.0:8000");
 }
 
 main();

@@ -14,7 +14,6 @@ service TaskService {
 // Create request and response
 message CreateTaskRequest {
     string title = 1;
-    bool is_active = 2;
 }
 
 message CreateTaskResponse {
@@ -40,6 +39,7 @@ message TaskResponse {
     string title = 2;
     bool is_active = 3;
     string created_at = 4;
+    string updated_at = 5;
 }
 
 // Find request and response
