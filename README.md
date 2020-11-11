@@ -7,6 +7,7 @@ Micro service structure using Node JS
  - Promisce / callback
  - Configuration for app (env variables, secret data)
  - HTTP methods + REST API
+ - RPC, Proto
  - Microservice based applications
  - Unit testing(Mocha / Chai / ...)
  - Error handling / logging
