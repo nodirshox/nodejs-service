@@ -3,8 +3,8 @@ Micro service structure using Node JS
 
 # Roadmap
  - Javascript ES6
- - Async await functions
  - Promisce / callback
+ - Async await functions
  - Configuration for app (env variables, secret data)
  - HTTP methods + REST API
  - RPC, Proto
