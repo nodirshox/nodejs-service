@@ -2,6 +2,8 @@
 Micro service structure using Node JS
 
 # Roadmap
+ - Object Oriented Programming
+ - Javascript basics
  - Javascript ES6
  - Promisce / callback
  - Async await functions
@@ -27,3 +29,6 @@ Micro service structure using Node JS
  - Test endpoints on Postman
  - Postgress Relational Database
  - MongoDB NoSQL Database
+
+# Tasks
+ - [1-task](https://github.com/nodirshox/nodejs-service/tree/main/tasks/1-task.md)
