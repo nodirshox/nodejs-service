@@ -31,4 +31,5 @@ Micro service structure using Node JS
  - MongoDB NoSQL Database
 
 # Tasks
- - [1-task](https://github.com/nodirshox/nodejs-service/tree/main/tasks/1-task.md)
+ - [1-task: Hello Node JS](https://github.com/nodirshox/nodejs-service/tree/main/tasks/1-task.md)
+ - [2-task: CRUD operations with MongoDB](https://github.com/nodirshox/nodejs-service/tree/main/tasks/2-task.md)
